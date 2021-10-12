@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block body %}
+    <!-- Example row of columns -->
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Prochain evenement</h2>
+            <p>{{ nextEvent.resume }}</p>
+            <p><a class="btn btn-primary" href="#" role="button">Voir détails &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Les evenements passés</h2>
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Nom</th>
+                    <th>Date</th>
+                    <th>Lien</th>
+                </tr>
+
+                {% for evt in passedEvents %}
+                    <tr>
+                    <td>{{ evt.id }}</td>
+                    <td>{{ evt.resume }}</td>
+                    <td>{{ evt.date }}</td>
+                    <td><a class="btn btn-primary" href="#" role="button">Voir détails &raquo;</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h2>Les propositions</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+    </div>
+{% endblock %}
